@@ -1,0 +1,8 @@
+
+HashMap has O(1) because it use a algorithms that is as good as "constant" to add, remove or find items and for getting the size of the hashmap.
+Each "bucket" should contain a constant range of hashCodes and the items will be placed in the map accordingly to the hashCode and not the order they were added.
+if for some reason every entry was put in one bucket the runtime would be O(n), but this is not likely to happen.
+
+the graph has worstcase O(n) because there is a possibility that it must go through all the nodes.
+
+Me waiting with this task to the end = O(2^n), witch is bad!
