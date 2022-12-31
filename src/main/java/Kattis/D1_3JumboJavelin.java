@@ -2,7 +2,7 @@ package Kattis;
 
 import java.util.Scanner;
 
-public class T3 {
+public class D1_3JumboJavelin {
     public static void main(String[] args) {
         Scanner myscan = new Scanner(System.in);
         int numberOfRods = myscan.nextInt();

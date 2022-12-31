@@ -2,7 +2,7 @@ package Kattis;
 
 import java.util.Scanner;
 
-public class Aah {
+public class D1_6Aah {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 

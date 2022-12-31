@@ -3,7 +3,7 @@ package Kattis;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class BlackFriday {
+public class D2_0BlackFriday {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);

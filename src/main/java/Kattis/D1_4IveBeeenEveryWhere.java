@@ -3,7 +3,7 @@ package Kattis;
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class IveBeeenEveryWhere {
+public class D1_4IveBeeenEveryWhere {
 
     public static void main(String[] args) {
         HashSet<String> distinctCities = new HashSet<>();

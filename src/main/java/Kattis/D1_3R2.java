@@ -2,7 +2,7 @@ package Kattis;
 
 import java.util.Scanner;
 
-public class T2 {
+public class D1_3R2 {
     public static void main(String[] args) {
         Scanner myscan = new Scanner(System.in);
         int r1 = myscan.nextInt();

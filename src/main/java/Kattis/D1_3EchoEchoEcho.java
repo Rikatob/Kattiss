@@ -2,7 +2,7 @@ package Kattis;
 
 import java.util.Scanner;
 
-public class T4 {
+public class D1_3EchoEchoEcho {
     public static void main(String[] args) {
         Scanner myscan = new Scanner(System.in);
         String pattern = "[a-zA-Z]{1,15}";

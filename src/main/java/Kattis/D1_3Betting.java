@@ -2,7 +2,7 @@ package Kattis;
 
 import java.util.Scanner;
 
-public class T6 {
+public class D1_3Betting {
     public static void main(String[] args) {
         Scanner myscan = new Scanner(System.in);
         double a = myscan.nextInt();
