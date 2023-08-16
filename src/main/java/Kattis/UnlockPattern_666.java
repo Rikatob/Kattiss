@@ -1,5 +1,6 @@
 package Kattis;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -9,8 +10,30 @@ public class UnlockPattern_666 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int size = 3;
 
-        double length = 0;
+        List<List<Integer>> display = new ArrayList<List<Integer>>(size);
+
+        for (int i = 0; i < size; i++) {
+            display.add(new ArrayList<Integer>());
+        }
+
+        int inputCount = 0;
+        while (inputCount < 3) {
+            String temp = sc.nextLine();
+            display.get(inputCount).add(Integer.parseInt(String.valueOf(temp.charAt(0))));
+            display.get(inputCount).add(Integer.parseInt(String.valueOf(temp.charAt(2))));
+            display.get(inputCount).add(Integer.parseInt(String.valueOf(temp.charAt(4))));
+            inputCount++;
+        }
+
+        Array[][] start= new Array[1][1];
+
+
+
+        System.out.println(display);
+
+  /*      double length = 0;
 
         ArrayList<Integer> first = new ArrayList<>();
         ArrayList<Integer> second = new ArrayList<>();
@@ -73,18 +96,19 @@ public class UnlockPattern_666 {
             if (oneIndex.get(0).equals(twoIndex.get(0)) && !oneIndex.get(1).equals(twoIndex.get(1))) {
                 length += 1;
             } else {
-                length += Math.sqrt(8);
+                length += 1.41421356235;
             }
 
             if (twoIndex.get(0).equals(threeIndex.get(0)) && !twoIndex.get(1).equals(threeIndex.get(1))) {
                 length += 1;
             } else {
-                length += Math.sqrt(8);
+                length += 1.41421356235;
             }
             jalla ++;
         }
 
         System.out.println(length);
 
+    }*/
     }
 }
