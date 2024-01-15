@@ -10,12 +10,14 @@ public class UnlockPattern_666 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int vertical = 1;
+        double diagonal = 1.41421356235;
         int size = 3;
 
-        List<List<Integer>> display = new ArrayList<List<Integer>>(size);
+        List<List<Integer>> display = new ArrayList<>(size);
 
         for (int i = 0; i < size; i++) {
-            display.add(new ArrayList<Integer>());
+            display.add(new ArrayList<>());
         }
 
         int inputCount = 0;
@@ -27,88 +29,68 @@ public class UnlockPattern_666 {
             inputCount++;
         }
 
-        Array[][] start= new Array[1][1];
+        // System.out.println(display);
+        double length = 0;
+        int xValue = -1;
+        int yValue = -1;
+        boolean firstFound = false;
+        for (int currNumber = 1; currNumber < 10; currNumber++) {
 
+            yFor:
+            for (int y = 0; y < 3; y++) {
+                xFor:
+                for (int x = 0; x < 3; x++) {
+                    if (display.get(y).get(x) == currNumber) {
+                        // Set x,y Values first time.
+                        if (!firstFound) {
+                            yValue = y;
+                            xValue = x;
+                            firstFound = true;
+                            break yFor;
+                        } else {
+                            // If on same y axes.
+                            if (y == yValue) {
+                                if (x == xValue + 1 || x == xValue - 1) {
+                                    length += 1;
+                                } else {
+                                    length += 2;
+                                }
+                                // if on same x axes.
+                            } else if (x == xValue) {
+                                if (y == yValue + 1 || y == yValue - 1) {
+                                    length += vertical;
+                                } else {
+                                    length += (vertical * 2);
+                                }
 
+                            } else if (y == yValue + 1 || y == yValue - 1) {
+                                //Single diagonal.
+                                if (x == xValue + 1 || x == xValue - 1) {
+                                    length += diagonal;
+                                    // L-shape (longside horizontal)
+                                } else if (x == xValue + 2 || x == xValue - 2) {
+                                    length += Math.sqrt(5);
+                                }
 
-        System.out.println(display);
+                            } else if (y == yValue + 2 || y == yValue - 2) {
+                                //Double diagonal.
+                                if (x == xValue + 2 || x == xValue - 2) {
+                                    length += (diagonal * 2);
+                                    // L-shape (longside vertical)
+                                } else if (x == xValue + 1 || x == xValue - 1) {
+                                    length += Math.sqrt(5);
+                                }
+                            }/* else if (y == yValue + 1 && x == xValue - 2 || y == yValue + 1 && x == xValue + 2 || y == yValue - 1 && x == xValue - 2 || y == yValue - 1 && x == xValue + 2) {
+                                length += vertical;
+                            }*/
+                            yValue = y;
+                            xValue = x;
+                        }
 
-  /*      double length = 0;
-
-        ArrayList<Integer> first = new ArrayList<>();
-        ArrayList<Integer> second = new ArrayList<>();
-        ArrayList<Integer> third = new ArrayList<>();
-        ArrayList<ArrayList<Integer>> display = new ArrayList<>();
-
-        first.add(6);
-        first.add(5);
-        first.add(4);
-
-        second.add(1);
-        second.add(2);
-        second.add(3);
-
-        third.add(9);
-        third.add(8);
-        third.add(7);
-
-        display.add(first);
-        display.add(second);
-        display.add(third);
-
-        int one;
-        int two;
-        int three;
-
-        HashMap<Integer, Integer> index = new HashMap<>();
-        List<Integer> oneIndex = new ArrayList<>();
-        List<Integer> twoIndex = new ArrayList<>();
-        List<Integer> threeIndex = new ArrayList<>();
-
-
-        int jalla = 0;
-        while (jalla <3) {
-
-            one = sc.nextInt();
-            two = sc.nextInt();
-            three = sc.nextInt();
-
-            for (int i = 0; i < display.size(); i++) {
-
-                int sizeY = display.get(i).size();
-                for (int j = 0; j < sizeY; j++) {
-
-                    if (one == display.get(i).get(j)) {
-                        oneIndex.add(display.get(i).indexOf(j));
-                        oneIndex.add(i);
-
-                    } else if (two == display.get(i).get(j)) {
-                        twoIndex.add(display.get(i).indexOf(j));
-                        twoIndex.add(i);
-
-                    } else if (three == display.get(i).get(j)) {
-                        threeIndex.add(display.get(i).indexOf(j));
-                        threeIndex.add(i);
                     }
                 }
             }
-
-            if (oneIndex.get(0).equals(twoIndex.get(0)) && !oneIndex.get(1).equals(twoIndex.get(1))) {
-                length += 1;
-            } else {
-                length += 1.41421356235;
-            }
-
-            if (twoIndex.get(0).equals(threeIndex.get(0)) && !twoIndex.get(1).equals(threeIndex.get(1))) {
-                length += 1;
-            } else {
-                length += 1.41421356235;
-            }
-            jalla ++;
         }
-
         System.out.println(length);
-
-    }*/
     }
 }
